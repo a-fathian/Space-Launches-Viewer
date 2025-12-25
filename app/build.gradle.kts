@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.thermondo.androidchallenge"
+    namespace = "ali.fathian.space.launches"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.thermondo.androidchallenge"
+        applicationId = "ali.fathian.space.launches"
         minSdk = 23
         targetSdk = 34
         versionCode = 1

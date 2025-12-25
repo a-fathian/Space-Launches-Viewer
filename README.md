@@ -34,7 +34,7 @@ To set up this project locally for development purposes, follow these steps:
 
 
 sh
-git clone https://github.com/a-fathian/AndroidCodingChallengeThermondo.git
+git clone https://github.com/a-fathian/Space-Launches-Viewer.git
 
 
 
@@ -62,7 +62,7 @@ for more information.
 
 Ali Fathian - fathian.ali@gmail.com
 
-Project Link: [https://github.com/a-fathian/AndroidCodingChallengeThermondo](https://github.com/a-fathian/AndroidCodingChallengeThermondo)
+Project Link: [https://github.com/a-fathian/Space-Launches-Viewer](https://github.com/a-fathian/Space-Launches-Viewer)
 
 ---
 

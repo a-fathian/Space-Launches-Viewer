@@ -1,4 +1,4 @@
-package com.thermondo.androidchallenge
+package ali.fathian.space.launches
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

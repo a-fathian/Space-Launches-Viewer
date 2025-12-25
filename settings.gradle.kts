@@ -13,7 +13,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "AndroidCodingChallenge"
+rootProject.name = "Space Launches Viewer"
 include(":app")
 include(":data")
 include(":domain")
