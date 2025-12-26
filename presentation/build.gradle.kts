@@ -70,7 +70,6 @@ dependencies {
 
     testImplementation(libs.junit)
 
-    testImplementation(libs.testing.assertj)
     testImplementation(libs.turbine)
     testImplementation(libs.kotlin.test.assertions)
     testImplementation(libs.testing.mockito.core)
