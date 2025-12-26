@@ -1,69 +1,134 @@
-# Project Title: Space Launches Viewer
+# Space Launches Viewer
 
-An engaging, intuitive, and visually rich application that allows users to browse through various space launches. This Android application leverages modern technology stacks and architectural patterns, ensuring a robust, maintainable, and testable codebase.
+Production-style Android application showcasing modern Android development
+practices with a strong focus on clean architecture, testability, and
+maintainability.
 
-## Features
-
-- View Space Launches: Users can explore past and upcoming space launches. Detailed information, including the launch date, time, location, mission details, and visuals, if available, are neatly displayed.
-
-- Bookmarking: Users have the option to bookmark their favorite launches for quick access. This personal list is easily accessible within the app.
-
-- Live Updates: The application stays updated with real-time information on upcoming launches, ensuring users are always in the know.
-
-- Interactive UI: Users enjoy an interactive experience with aesthetic visual elements and an intuitive interface, ensuring information is not only easily accessible but also pleasant to navigate.
-
-## Technology Stack
-
-- Kotlin: The application is fully developed in Kotlin, ensuring a modern, concise, and safe codebase.
-
-- MVVM Architecture: The code follows the Model-View-ViewModel (MVVM) architectural pattern, allowing for a decoupled and easily testable codebase.
-
-- Android Jetpack Compose: The UI is built using Jetpack Compose, the modern toolkit for building native UIs on Android, which allows for less boilerplate code and a powerful yet straightforward way to build interactive UIs.
-
-- Hilt-Dagger: Dependency injection is handled by Hilt, making the code more modular and testing more convenient.
-
-- Coil: For image loading, the project utilizes the power of Coil, making it easier to load, cache, and display images from various sources.
-
-- Retrofit: Handling REST API interactions through Retrofit, ensuring efficient network operations.
-
-## Getting Started
-
-To set up this project locally for development purposes, follow these steps:
-
-1. Clone the repository:
-
-
-sh
-git clone https://github.com/a-fathian/Space-Launches-Viewer.git
-
-
-
-2. Open the project in Android Studio or your preferred IDE.
-
-3. Run the application on an emulator or physical device connected to your development machine.
-
-## Contribution
-
-Contributions are what make the open-source community such a fantastic place to learn, inspire, and create. Any contributions to this project are greatly appreciated.
-
-1. Fork the project.
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a pull request.
-
-## License
-
-Distributed under the MIT License. See
-LICENSE
-for more information.
-
-## Contact
-
-Ali Fathian - fathian.ali@gmail.com
-
-Project Link: [https://github.com/a-fathian/Space-Launches-Viewer](https://github.com/a-fathian/Space-Launches-Viewer)
+The app allows users to browse space launches, view detailed information,
+and bookmark favorite launches using a modern, reactive UI and Offline-first support.
 
 ---
 
-This documentation provides an overview of the project and basic setup instructions. It is intended to help developers understand the purpose of the project, its high-level functionality, and how to get started with development. The contribution section encourages community involvement.
+## Tech Stack
+
+- **Language:** Kotlin
+- **UI:** Jetpack Compose
+- **Architecture:** Clean Architecture + MVVM
+- **Async:** Kotlin Coroutines & Flow
+- **Networking:** Retrofit / OkHttp
+- **Dependency Injection:** Hilt
+- **Local Storage:** Room
+- **Build System:** Gradle (Version Catalog)
+- **Testing:** JUnit, Coroutine Test, Mockito
+- **Other:** Material Design, Coil
+
+---
+
+## Architecture Overview
+
+The project follows **Clean Architecture** principles to ensure a clear
+separation of concerns and high testability.
+
+UI (Compose)
+
+│
+
+├── Presentation Layer (ViewModels, UI State)
+
+│
+
+├── Domain Layer (UseCases, Business Rules)
+
+│
+
+└── Data Layer (Repositories, Remote & Local Data Sources)
+
+
+- **Presentation layer** handles UI state and user interactions.
+- **Domain layer** contains pure business logic with no Android dependencies.
+- **Data layer** manages API communication and local persistence.
+
+This structure allows independent testing of each layer and supports
+scalability for larger teams.
+
+---
+
+## Modularization
+
+The application is structured into multiple Gradle modules:
+
+- `app` – Application setup and navigation
+- `data` – Repositories and data sources
+- `domain` – Use cases and business models
+- `presentation` – Viewmodels and composables
+
+✅ Improved build times  
+✅ Clear ownership boundaries  
+✅ High scalability for enterprise projects
+
+---
+
+## Testing
+
+The project includes **unit tests across all major layers**, following
+industry best practices.
+
+### Covered Test Types
+
+- **Repository tests**
+  - Validate data fetching from remote and local sources
+  - Ensure proper error handling and data mapping
+
+- **Use Case tests**
+  - Verify business logic in isolation
+  - Run as pure JVM tests without Android dependencies
+
+- **ViewModel tests**
+  - Validate UI state changes
+  - Test coroutine and Flow-based asynchronous logic
+
+### Testing Tools
+
+- JUnit
+- Kotlin Coroutines Test
+- Mockito
+
+Tests are designed to be **fast, deterministic, and CI-friendly**, enabling
+safe refactoring and continuous delivery.
+
+---
+
+## UI & UX
+
+- Built fully with **Jetpack Compose**
+- Reactive UI driven by immutable UI state
+- Material Design principles applied
+- Supports loading, success, and error states
+
+---
+
+## Why This Project Exists
+
+This project was created to demonstrate:
+- Senior-level Android architecture decisions
+- Real-world modular Android project setup
+- Clean, testable, and scalable code
+- Modern Android development aligned with industry standards
+
+---
+
+## Future Improvements
+
+- UI tests with Compose Testing
+- Pagination for large data sets
+- Improved error handling UX
+
+---
+
+## Author
+
+**Ali Fathian**  
+Senior Android Engineer  
+
+- GitHub: https://github.com/a-fathian
+- LinkedIn: https://linkedin.com/in/ali-fathian
