@@ -1,3 +1,5 @@
+![Android CI](https://github.com/a-fathian/Space-Launches-Viewer/actions/workflows/android-ci.yml/badge.svg)
+
 # Space Launches Viewer
 
 Production-style Android application showcasing modern Android development
@@ -95,6 +97,14 @@ industry best practices.
 
 Tests are designed to be **fast, deterministic, and CI-friendly**, enabling
 safe refactoring and continuous delivery.
+
+---
+
+## CI Pipeline
+
+The project uses GitHub Actions to automatically build the application
+and run unit tests on every pull request and main branch update, ensuring
+code quality and stability.
 
 ---
 
