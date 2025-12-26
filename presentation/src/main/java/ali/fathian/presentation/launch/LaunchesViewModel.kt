@@ -21,7 +21,7 @@ import javax.inject.Inject
 class LaunchesViewModel @Inject constructor(
     private val launchUseCase: GetAllLaunchesUseCase,
     private val bookmarksUseCase: BookmarksUseCase,
-    @DispatcherIO private val dispatcher: CoroutineDispatcher
+    @param:DispatcherIO private val dispatcher: CoroutineDispatcher
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(Launches())

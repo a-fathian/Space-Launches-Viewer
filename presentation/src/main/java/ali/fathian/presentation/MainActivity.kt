@@ -2,10 +2,11 @@ package ali.fathian.presentation
 
 import ali.fathian.presentation.launch.LaunchesViewModel
 import ali.fathian.presentation.ui.LaunchList
-import ali.fathian.presentation.ui.theme.AndroidCodingChallengeTheme
+import ali.fathian.presentation.ui.theme.SpaceLaunchesViewerTheme
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.runtime.collectAsState
 import dagger.hilt.android.AndroidEntryPoint
@@ -17,8 +18,9 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContent {
-            AndroidCodingChallengeTheme {
+            SpaceLaunchesViewerTheme {
                 val bookmarks = viewModel.bookmarks.collectAsState().value
                 LaunchList(
                     viewModel.uiState.collectAsState().value,

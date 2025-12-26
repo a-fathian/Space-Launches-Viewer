@@ -47,7 +47,7 @@ fun LaunchList(
     val navController = rememberNavController()
     Scaffold(
         bottomBar = {
-            NavigationBar() {
+            NavigationBar {
                 bottomBarItems.forEachIndexed { index, item ->
                     NavigationBarItem(
                         selected = selectedBottomBarIndex == index,
@@ -109,7 +109,7 @@ fun Bookmarks(
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .padding(bottom = paddingValues.calculateBottomPadding()),
+            .padding(paddingValues),
         verticalArrangement = Arrangement.spacedBy(8.dp),
         contentPadding = PaddingValues(all = 8.dp)
     ) {
@@ -148,14 +148,17 @@ private fun Home(
                 onRetryClick()
             }
         } else {
-            TabRow(selectedTabIndex = selectedTabIndex) {
+            PrimaryTabRow(
+                selectedTabIndex = selectedTabIndex
+            ) {
                 tabItems.forEachIndexed { index, text ->
                     Tab(
                         selected = selectedTabIndex == index,
-                        onClick = { selectedTabIndex = index }
-                    ) {
-                        Text(text = text, modifier = Modifier.padding(8.dp))
-                    }
+                        onClick = { selectedTabIndex = index },
+                        text = {
+                            Text(text)
+                        }
+                    )
                 }
             }
             when (selectedTabIndex) {

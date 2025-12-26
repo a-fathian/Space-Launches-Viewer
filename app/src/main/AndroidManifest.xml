@@ -13,12 +13,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AndroidCodingChallenge"
+        android:theme="@style/Theme.SpaceLaunchesViewer"
         tools:targetApi="31">
 
         <activity
             android:name="ali.fathian.presentation.MainActivity"
-            android:theme="@style/Theme.AndroidCodingChallenge"
+            android:theme="@style/Theme.SpaceLaunchesViewer"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

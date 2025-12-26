@@ -1,14 +1,15 @@
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.com.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
     alias(libs.plugins.ksp)
-    id("kotlin-kapt")
+    alias(libs.plugins.room)
 }
 
 android {
     namespace = "ali.fathian.data"
-    compileSdk = 33
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 23
@@ -30,21 +31,27 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_1_8)
     }
+}
+
+room {
+    schemaDirectory("$projectDir/schemas")
 }
 
 dependencies {
 
     implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
     implementation(libs.room.ktx)
     implementation(libs.room.runtime)
     ksp(libs.room.compiler)
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.converter)
-    implementation(libs.okhttp.logging)
     implementation(libs.okhttp.interceptor)
 
     implementation(project(":domain"))
